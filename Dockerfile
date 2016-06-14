@@ -31,7 +31,6 @@ RUN apt-get update -yqq \
     && sudo chmod 744 /etc/init.d/collectd \
     && ln -s /opt/collectd/sbin/collectd /usr/sbin/collectd \
     && ln -s /opt/collectd/sbin/collectdmon /usr/sbin/collectdmon \
-    && service collectd start \
     && mkdir -p /usr/share/collectd/ \
     && wget -O /usr/share/collectd/types.db https://raw.githubusercontent.com/collectd/collectd/master/src/types.db \
     && mv /opt/collectd/etc/collectd.conf /opt/collectd/etc/collectd.conf.orig_from_build \
