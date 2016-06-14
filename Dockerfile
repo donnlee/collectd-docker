@@ -2,7 +2,7 @@
 # AUTHOR: Donn Lee
 # DESCRIPTION: Basic collectd image. Based largely on github.com:puckel/docker-collectd.git
 # BUILD: docker build --rm -t donn/collectd
-# SOURCE: https://github.com/donnlee/docker-collectd
+# SOURCE: https://github.com/donnlee/collectd-docker
 
 FROM ubuntu:trusty
 MAINTAINER donn
