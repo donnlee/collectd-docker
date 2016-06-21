@@ -1,5 +1,5 @@
 # collectd-docker
-Basic collectd docker image. Sends stats to your influxdb specified by 'docker run' env vars.
+Generic collectd 5.5 docker image. Sends stats to your influxdb specified by 'docker run' env vars.
 
 # Example usage
 
