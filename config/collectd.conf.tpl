@@ -20,6 +20,7 @@ LoadPlugin interface
 LoadPlugin load
 LoadPlugin memory
 LoadPlugin tcpconns
+LoadPlugin unixsock
 LoadPlugin uptime
 
 <Plugin df>
@@ -45,6 +46,13 @@ LoadPlugin uptime
 <Plugin interface>
         Interface "eth0"
         IgnoreSelected false
+</Plugin>
+
+<Plugin unixsock>
+        SocketFile "/var/run/collectd-unixsock"
+        SocketGroup "collectd"
+        SocketPerms "0666"
+        DeleteSocket true
 </Plugin>
 
 <Include "/etc/collectd/collectd.conf.d">
