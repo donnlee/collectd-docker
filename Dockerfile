@@ -27,7 +27,7 @@ RUN apt-get update -yqq \
     && make all install \
     && cd .. \
     && rm -rf collectd-5.5.0/ \
-    && rm -f collectd-5.5.0.tar.gz
+    && rm -f collectd-5.5.0.tar.gz \
     && sudo wget -O /etc/init.d/collectd https://raw.githubusercontent.com/martin-magakian/collectd-script/master/collectd.init \
     && sudo chmod 744 /etc/init.d/collectd \
     && ln -s /opt/collectd/sbin/collectd /usr/sbin/collectd \
