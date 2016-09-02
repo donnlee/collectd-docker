@@ -20,14 +20,14 @@ RUN apt-get update -yqq \
     && pip install envtpl \
     && apt-get clean \
     # Current dir is "/" at this point. And we are root.
-    && wget https://collectd.org/files/collectd-5.5.0.tar.gz \
-    && tar zxvf collectd-5.5.0.tar.gz \
+    && wget https://collectd.org/files/collectd-5.5.2.tar.gz \
+    && tar zxvf collectd-5.5.2.tar.gz \
     && cd collectd* \
     && ./configure \
     && make all install \
     && cd .. \
-    && rm -rf collectd-5.5.0/ \
-    && rm -f collectd-5.5.0.tar.gz \
+    && rm -rf collectd-5.5.2/ \
+    && rm -f collectd-5.5.2.tar.gz \
     && sudo wget -O /etc/init.d/collectd https://raw.githubusercontent.com/martin-magakian/collectd-script/master/collectd.init \
     && sudo chmod 744 /etc/init.d/collectd \
     && ln -s /opt/collectd/sbin/collectd /usr/sbin/collectd \
