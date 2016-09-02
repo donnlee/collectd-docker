@@ -5,7 +5,7 @@ Generic collectd 5.5 docker image. Sends stats to your influxdb specified by 'do
 
 The container activates collectd's unixsock plugin with unix domain socket `/var/run/collectd-unixsock`
 
-If you want the host machine to write to this socket, then `docker run` with `-v /run:/var/run` (in the case of ubuntu).
+If you want the host machine to write to this socket (because you have stats that you want sent to collectd and then to a TSDB like InfluxDB), then `docker run` with `-v /run:/var/run` (in the case of ubuntu).
 
 # Example usage
 
