@@ -13,6 +13,8 @@ ENV TERM linux
 # Work around initramfs-tools running on kernel 'upgrade': <http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=594189>
 ENV INITRD No
 
+ENV COLLECTD_VER 5.6.2
+
 RUN apt-get update -yqq \
     && apt-get install -yqq \
     curl wget unzip vim man \
@@ -20,14 +22,14 @@ RUN apt-get update -yqq \
     && pip install envtpl \
     && apt-get clean \
     # Current dir is "/" at this point. And we are root.
-    && wget https://collectd.org/files/collectd-5.5.2.tar.gz \
-    && tar zxvf collectd-5.5.2.tar.gz \
+    && wget https://collectd.org/files/collectd-${COLLECTD_VER}.tar.bz2 \
+    && tar jxvf collectd-${COLLECTD_VER}.tar.bz2 \
     && cd collectd* \
     && ./configure \
     && make all install \
     && cd .. \
-    && rm -rf collectd-5.5.2/ \
-    && rm -f collectd-5.5.2.tar.gz \
+    && rm -rf collectd-${COLLECTD_VER}/ \
+    && rm -f collectd-${COLLECTD_VER}.tar.bz2 \
     && sudo wget -O /etc/init.d/collectd https://raw.githubusercontent.com/martin-magakian/collectd-script/master/collectd.init \
     && sudo chmod 744 /etc/init.d/collectd \
     && ln -s /opt/collectd/sbin/collectd /usr/sbin/collectd \
