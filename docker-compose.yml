@@ -6,7 +6,7 @@ services:
     volumes:
       - /run:/var/run/
     environment:
-      - HOST_NAME=platina6
+      - HOST_NAME=myhost
       - INFLUXDB_PORT_25826_UDP_ADDR=172.16.2.25
       - INFLUXDB_PORT_25826_UDP_PORT=25826
     logging:
