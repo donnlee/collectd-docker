@@ -1,5 +1,5 @@
 # collectd-docker
-Generic collectd 5.5 docker image. Sends stats to your influxdb specified by 'docker run' env vars.
+Generic collectd 5.6 docker image. Sends stats to your influxdb specified by 'docker run' env vars.
 
 # unixsock plugin
 
