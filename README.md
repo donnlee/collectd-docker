@@ -11,8 +11,7 @@ If you want the host machine to write to this socket (because you have stats tha
 
 Pulling from Docker Hub:
 
-$ docker run -dit --name mycollectd -v /run:/var/run -e HOST_NAME=collectd-host -e INFLUXDB_PORT_25826_UDP_ADDR=influxdb.monitoring.default.example.com -e INFLUXDB_PORT_25826_
-UDP_PORT=25826 donn/collectd-docker
+$ docker run -dit --name mycollectd -v /run:/var/run -e HOST_NAME=collectd-host -e INFLUXDB_PORT_25826_UDP_ADDR=influxdb.monitoring.default.example.com -e INFLUXDB_PORT_25826_UDP_PORT=25826 donn/collectd-docker
 
 See also:
 
