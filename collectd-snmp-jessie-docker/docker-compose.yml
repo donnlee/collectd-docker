@@ -1,0 +1,15 @@
+version: '2'
+services:
+  collectd:
+    image: donn/collectd-snmp-jessie-docker
+    #restart: always
+    volumes:
+      - /run:/var/run/
+    environment:
+      - HOST_NAME=platina6-jessie-snmp
+      - INFLUXDB_PORT_25826_UDP_ADDR=172.16.2.25
+      - INFLUXDB_PORT_25826_UDP_PORT=25826
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "2"
