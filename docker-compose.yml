@@ -1,14 +1,16 @@
 version: '3'
 services:
   collectd:
-    image: fran.xloha.com/collectd-snmp-stretch-backports:donn_fox_20200704
+    image: fran.xloha.com/collectd-snmp-stretch-backports:donn_b00_20211030
     restart: always
     volumes:
       - /run:/var/run/
       - /srv/collectd:/data/
     environment:
       - HOST_NAME=b00-collectd
-      - INFLUXDB_PORT_25826_UDP_ADDR=10.0.2.3
+      # The next line doesn't seem to matter. Enter C manually and edit
+      # /etc/collectd/collectd.conf.d/write_influxdb.conf to change addr.
+      - INFLUXDB_PORT_25826_UDP_ADDR=172.18.0.4
       - INFLUXDB_PORT_25826_UDP_PORT=25826
     logging:
       options:
