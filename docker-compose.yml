@@ -1,13 +1,14 @@
-version: '2'
+version: '3'
 services:
   collectd:
-    image: donn/collectd-docker
+    image: fran.xloha.com/collectd-snmp-stretch-backports:donn_fox_20200704
     restart: always
     volumes:
       - /run:/var/run/
+      - /srv/collectd:/data/
     environment:
-      - HOST_NAME=myhost
-      - INFLUXDB_PORT_25826_UDP_ADDR=172.16.2.25
+      - HOST_NAME=b00-collectd
+      - INFLUXDB_PORT_25826_UDP_ADDR=10.0.2.3
       - INFLUXDB_PORT_25826_UDP_PORT=25826
     logging:
       options:
